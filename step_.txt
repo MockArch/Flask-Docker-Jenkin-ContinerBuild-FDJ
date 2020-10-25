@@ -1,0 +1,17 @@
+#################### Python Flask Docker Jenkin Pipeline ########################
+
+  a]  Jenkins Container
+        1] visit https://labs.play-with-docker.com
+        2] install the Jenkin (https://technology.riotgames.com/news/putting-jenkins-docker-container)
+        3] Run 
+            
+            docker run -p 8080:8080 --name=jenkins-arch -d --env JAVA_OPTS="-Xmx8192m" --env JENKINS_OPTS=" --handlerCountMax=300" --privileged -v /var/run/docker.sock:/var/run/docker.sock mockarch/docker_in_jenkins
+            # https://hub.docker.com/r/jpetazzo/dind DIND
+        4] You have to install 2 plugins: Docker plugin and Docker Pipeline. Hope that helps.
+        5] get into the docker 
+            docker exec -it <Container ID>
+        6] get the Administrator password 
+            cat /var/jenkins_home/secrets/initialAdminPassword
+            and paste it in the ui
+        7] docker restart container_name
+        8] for email setting https://mailtrap.io/inboxes/1101797/messages
