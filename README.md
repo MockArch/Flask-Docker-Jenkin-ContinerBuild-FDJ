@@ -9,11 +9,16 @@ After you can download and install the python modules into a segregated virtuale
 ```bash
 # install python and create virtualenv
 pyenv install 3.7.6
-pyenv virtualenv 3.7.6 webmf-python-flask
+pyenv virtualenv 3.7.6 FDJ
 # change to virtualenv
 cd .
 # update pip module
 pip install --upgrade pip
+
+
+or
+
+virtualenv --python=python3 env-FDJ
 ```
 
 ## **Running the Application**
